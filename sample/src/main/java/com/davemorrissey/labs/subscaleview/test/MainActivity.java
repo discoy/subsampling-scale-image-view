@@ -39,18 +39,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case id.basicFeatures: startActivity(BasicFeaturesActivity.class); break;
-            case id.imageDisplay: startActivity(ImageDisplayActivity.class); break;
-            case id.eventHandling: startActivity(EventHandlingActivity.class); break;
-            case id.advancedEventHandling: startActivity(AdvancedEventHandlingActivity.class); break;
-            case id.viewPagerGalleries: startActivity(ViewPagerActivity.class); break;
-            case id.animation: startActivity(AnimationActivity.class); break;
-            case id.extension: startActivity(ExtensionActivity.class); break;
-            case id.configuration: startActivity(ConfigurationActivity.class); break;
-            case id.github: openGitHub(); break;
-        }
+    public void onClick(View view)
+    {
+        final int viewId = view.getId();
+        if(id.basicFeatures == viewId) startActivity(BasicFeaturesActivity.class);
+        else if(id.imageDisplay == viewId) startActivity(ImageDisplayActivity.class);
+        else if(id.eventHandling == viewId) startActivity(EventHandlingActivity.class);
+        else if(id.advancedEventHandling == viewId) startActivity(AdvancedEventHandlingActivity.class);
+        else if(id.viewPagerGalleries == viewId) startActivity(ViewPagerActivity.class);
+        else if(id.animation == viewId) startActivity(AnimationActivity.class);
+        else if(id.extension == viewId) startActivity(ExtensionActivity.class);
+        else if(id.configuration == viewId) startActivity(ConfigurationActivity.class);
+        else if(id.github == viewId) openGitHub();
     }
 
     private void startActivity(Class<? extends Activity> activity) {
